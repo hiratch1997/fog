@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My test page</title>
+  </head>
+  <body>
+    <div id="colorPickers" style="margin:0 auto;text-align: center;">
+        <label for="">Base</label><input type="color" name="bColor" id="bColor" value="#913d3d">
+        <label for="">Highlight</label><input type="color" name="hColor" id="hColor" value="#e6b41e">
+        <label for="">Midtone</label><input type="color" name="mColor" id="mColor" value="#57342f">
+        <label for="">Lowlight</label><input type="color" name="lColor" id="lColor" value="#383884">
+    </div>
+    <div id="vanta" style="width: 960px; height: 540px; margin:0 auto;"></div>
+    <div id="paramTuners" style="margin:0 auto;text-align: center;">
+        <label for="">Blur</label><input type="range" min="0.1" max="0.9" value="0.35" step="0.1" name="blur" id="blur">
+        <label for="">Zoom</label><input type="range" min="0.1" max="3.0" value="1.0" step="0.1" name="zoom" id="zoom">
+        <label for="">Speed</label><input type="range" min="0.0" max="5.0" value="1.0" step="0.1" name="speed" id="speed">
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
+    <script>
+        const vanta = VANTA.FOG({
+          el: "#vanta",
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          blurFactor: 0.35,
+          zoom: 1.0,
+          speed: 1.0,
+          baseColor: 0x383884,
+          highlightColor: 0xe6b41e,
+          midtoneColor: 0x57342f,
+          lowlightColor: 0x383884
+        })
+
+        document.getElementById("bColor").addEventListener('change', ChangeBColor, false);
+        document.getElementById("hColor").addEventListener('change', ChangeHColor, false);
+        document.getElementById("mColor").addEventListener('change', ChangeMColor, false);
+        document.getElementById("lColor").addEventListener('change', ChangeLColor, false);
+        document.getElementById("bColor").addEventListener('input', ChangeBColor, false);
+        document.getElementById("hColor").addEventListener('input', ChangeHColor, false);
+        document.getElementById("mColor").addEventListener('input', ChangeMColor, false);
+        document.getElementById("lColor").addEventListener('input', ChangeLColor, false);
+
+        document.getElementById("blur").addEventListener('change', ChangeBlur, false);
+        document.getElementById("zoom").addEventListener('change', ChangeZoom, false);
+        document.getElementById("speed").addEventListener('change', ChangeSpeed, false);
+        document.getElementById("blur").addEventListener('input', ChangeBlur, false);
+        document.getElementById("zoom").addEventListener('input', ChangeZoom, false);
+        document.getElementById("speed").addEventListener('input', ChangeSpeed, false);
+
+        function ChangeBColor(event){
+            vanta.setOptions({
+                baseColor: event.target.value
+            });
+            vanta.resize()
+        }
+
+        function ChangeHColor(event){
+            vanta.setOptions({
+                highlightColor: event.target.value
+            });
+            vanta.resize()
+        }
+
+        function ChangeMColor(event){
+            vanta.setOptions({
+                midtoneColor: event.target.value
+            });
+            vanta.resize()
+        }
+
+        function ChangeLColor(event){
+            vanta.setOptions({
+                lowlightColor: event.target.value
+            });
+            vanta.resize()
+        }
+
+        function ChangeBlur(){
+            vanta.setOptions({
+                blurFactor: Number(event.target.value)
+            });
+            vanta.resize()
+        }
+
+        function ChangeZoom(){
+            vanta.setOptions({
+                zoom: Number(event.target.value)
+            });
+            vanta.resize()
+        }
+
+        function ChangeSpeed(){
+            vanta.setOptions({
+                speed: Number(event.target.value)
+            });
+            vanta.resize()
+        }
+
+    </script>
+  </body>
+</html>
