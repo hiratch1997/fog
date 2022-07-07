@@ -2,21 +2,53 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>My test page</title>
+    <title>Fog Generator</title>
+    <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <div id="colorPickers" style="margin:0 auto;text-align: center;">
-        <label for="">Base</label><input type="color" name="bColor" id="bColor" value="#913d3d">
-        <label for="">Highlight</label><input type="color" name="hColor" id="hColor" value="#e6b41e">
-        <label for="">Midtone</label><input type="color" name="mColor" id="mColor" value="#57342f">
-        <label for="">Lowlight</label><input type="color" name="lColor" id="lColor" value="#383884">
+    <div id="header">
+        <h1 id="title">Fog Generator<span style="color: red;">.<span></h1>
     </div>
-    <div id="vanta" style="width: 960px; height: 540px; margin:0 auto;"></div>
-    <div id="paramTuners" style="margin:0 auto;text-align: center;">
-        <label for="">Blur</label><input type="range" min="0.1" max="0.9" value="0.35" step="0.1" name="blur" id="blur">
-        <label for="">Zoom</label><input type="range" min="0.1" max="3.0" value="1.0" step="0.1" name="zoom" id="zoom">
-        <label for="">Speed</label><input type="range" min="0.0" max="5.0" value="1.0" step="0.1" name="speed" id="speed">
+    <div id="colorPickers">
+        <div>
+            <label for="">Base</label>
+            <input type="color" name="bColor" id="bColor" value="#913d3d">
+        </div>
+
+        <div>
+            <label for="">Highlight</label>
+            <input type="color" name="hColor" id="hColor" value="#e6b41e">
+        </div>
+
+        <div>
+            <label for="">Midtone</label>
+            <input type="color" name="mColor" id="mColor" value="#57342f">
+        </div>
+
+        <div>
+            <label for="">Lowlight</label>
+            <input type="color" name="lColor" id="lColor" value="#383884">
+        </div>
     </div>
+    <div id="vanta"></div>
+    <div id="paramTuners">
+        <div>
+            <label for="">Blur</label>
+            <input type="range" min="0.1" max="0.9" value="0.35" step="0.1" name="blur" id="blur">
+        </div>
+
+        <div>
+            <label for="">Zoom</label>
+            <input type="range" min="0.1" max="3.0" value="1.0" step="0.1" name="zoom" id="zoom">
+        </div>
+
+        <div>
+            <label for="">Speed</label>
+            <input type="range" min="0.0" max="5.0" value="1.0" step="0.1" name="speed" id="speed">
+        </div>
+    </div>
+
+    <p id="footer">powered by Vantajs (c)2022 hiratch1997</p>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script>
     <script>

@@ -1,0 +1,53 @@
+body{
+    margin: 0;
+}  
+
+#header{
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    padding: 0;
+    height: 10%;
+    width: windowWidth;
+    background-color: black;
+    color: white;
+}
+
+#footer{
+    width: 100%;
+    position: absolute;/*←絶対位置*/
+    bottom: 0; /*下に固定*/
+    text-align: center;
+    padding-right: 10%;
+}
+
+#title{
+    margin-top: 0;
+    margin-left: 2%;
+}
+
+#colorPickers{
+    margin:0 auto;
+    padding: 1% 0;
+    width: 960px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#paramTuners{
+    margin:0 auto;
+    padding: 1% 0;
+    width: 960px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#vanta{
+    width: 960px;
+    height: 540px;
+    margin:0 auto;
+}
+
+#header{
+    height: 100px;
+}
